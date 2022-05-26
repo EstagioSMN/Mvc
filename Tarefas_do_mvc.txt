@@ -1,0 +1,20 @@
+### Tela Login: ###
+
+- Login (Arthur)
+- Esqueci senha (Ane) - muita coisa*
+- Trocar senha (Caio)
+
+- Enviar e-mail (Waldson)
+
+
+### Tela Layout ###
+
+- Faça isso :) (Felipe)
+
+
+### Tela Usuario ###
+
+- Cadastrar usuário (Emersson)
+- Editar usuário (João Carlos)
+- Buscar usuário (Emerson)
+- Bloquear usuário (João Carlos)
