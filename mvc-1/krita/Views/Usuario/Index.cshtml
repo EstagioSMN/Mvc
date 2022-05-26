@@ -1,0 +1,69 @@
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+    <link rel="stylesheet" href="~/css/cadastrarusuario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
+</head>
+<body>
+    <div class="botao-cadastrar">
+        <a href="#" uk-toggle="target: #modal-editar" uk-icon="icon: plus; ratio: 2">
+        </a>
+    </div>
+    <center> @TempData["MensagemCadastro"] </center>
+    <div id="modal-editar" class="div-principal uk-modal-container uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-margin-auto-vertical  modal-editar">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <form id="form-cadastro" class="uk-form-stacked" role="form">
+                <h2 class="uk-modal-title titulo-cadastrar-usuario"> Insira os dados do Usuário </h2>
+                <div class="inputs-primeira-linha">
+                    <div class="username">
+                        <div class="textfield">
+                            <input class="uk-input" name="Apelido" type="text" placeholder="" required
+                                spellcheck="false">
+                            <span class="placeholder">Apelido</span>
+                        </div>
+                    </div>
+                    <div class="email">
+                        <div class="textfield">
+                            <input class="uk-input" name="Email" type="text" required spellcheck="false">
+                            <span class="placeholder">Email</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="data-bloqueio">
+                    <input class="uk-input" type="text" placeholder="Data de Bloqueio" disabled value="">
+                </div>
+                <br>
+                <div class="permissoes">
+                    <input class="uk-input" type="text" placeholder="" disabled value="Permissões do Usuario">
+                </div>
+                <br><br><br><br><br><br><br><br>
+                <div class="botoes-salvar">
+                    <input class="button limpar" name="enviar" type="reset" value="Limpar">
+                    <button class="button salvar" name="enviar" type="submit" value="Salvar" onclick="usuario.cadastro()">Enviar</button>
+                    @TempData["MensagemCadastro"]
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
+    <script src="~/js/usuario.js"></script>
+    <script>
+        usuario.init({
+            urls: {
+                cadastro: '@Url.Action("Cadastrar")'
+            }
+        })
+    </script>
+</body>
+</html>

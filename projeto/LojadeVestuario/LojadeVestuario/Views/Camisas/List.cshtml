@@ -1,0 +1,25 @@
+﻿@model IEnumerable<LojadeVestuario.Models.Camisas>
+
+<div>
+    <h2>@ViewData["Titulo"]</h2>
+</div>
+<h2>@ViewData["Data"]</h2>
+<hr />
+<h3>@ViewBag.Total @ViewBag.TotalCamisas</h3>
+<hr />
+
+<h3>@TempData["Nome"]</h3>
+<div class="container">
+<div class="row">
+@foreach(var camisas in Model)
+{
+   <div class="col-sm-4 col-md-4 col-lg-4">
+   <p><img src="@camisas.ImagemUrl" class="img-fluid"></p>
+    <h3>Preço : @camisas.Preco.ToString("c")</h3>
+    <h4>@camisas.CamisasName</h4>
+    <p>@camisas.DescricaoCurta</p>
+  </div>
+
+}
+</div>
+</div>

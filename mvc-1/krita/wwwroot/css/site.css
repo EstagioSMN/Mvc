@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 60px;
+  background-color: #253840;
+  height: 100vh;
+}
+
+.menu {
+  background-color: #465459;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 8vh;
+}
+
+.colorIconMenu {
+  margin-left: 5vw;
+  color: #CCCCCC;
+  background-color: none;
+  border: none;
+}
+
+.uk-offcanvas-close {
+  background-color: transparent;
+  border: none;
+  color: #CCCCCC;
+  left: 1.5vw;
+  width: fit-content;
+}
+
+.uk-offcanvas-close:hover {
+  color: #253840;
+  cursor: pointer;
+}
+
+.colorIconUser {
+  margin-right: 5vw;
+  color: #CCCCCC !important;
+  border: none;
+}
+
+.bgMenu {
+  background-color: #465459;
+}
+
+a.textomenu:link {
+  font-size: 1.5rem !important;
+  color: #fff !important;
+  margin-bottom: 5%;
+}
+
+a.textomenu:hover {
+  color: #9AD9A3 !important;
+  margin-left: 1.15vw;
+  transform: scale(120%);
+  transition: .1s ease;
+}
+
+a.textomenu:active {
+  color: #9AD9A3 !important;
+}
+
+#offcanvas-nav {
+  padding-top: 0;
+}
+
+.logoImg img {
+  width: 800px;
+  margin-left: 15%;
+}
+
+.corAreaUser {
+  border-radius: 15px;
+  background-color: #c4c4c4;
+  color: #000;
+}
+
+.linhaHorizontal {
+  width: 100%;
+  border: 1px solid #000;
+}

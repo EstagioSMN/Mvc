@@ -1,0 +1,207 @@
+body {
+    background-color: #253840;
+    height: 100vh;
+    font-family: 'Ubuntu';
+    font-style: normal;
+}
+
+.botao-cadastrar {
+    background-color: #9AD9A3;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: 1px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-editar a:link,
+a:visited,
+a:hover,
+a:active {
+    color: #000;
+}
+
+.botao-editar:hover {
+    background-color: #7bdb89;
+    transition: all 0.2s;
+}
+
+.div-principal {
+    height: 100 vh;
+    width: 100vw;
+}
+
+.titulo-cadastrar-usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 28px !important;
+    font-family: 'Ubuntu' !important;
+    font-style: normal !important;
+}
+
+.modal-editar {
+    background-color: #F2F2F2;
+    height: 70%;
+    padding: 1%;
+    border-radius: 20px;
+}
+
+.inputs-primeira-linha {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: row;
+    padding-top: 10px !important;
+}
+
+.username {
+    width: 80%;
+}
+
+.username input {
+    width: 100%;
+    border-radius: 50px;
+    color: #000;
+    font-size: large;
+    background-color: #C4C4C4;
+    border-color: #000;
+    border: 2px solid;
+}
+
+.username input:focus {
+    border-color: #C4C4C4;
+    outline: none;
+    border-color: #000;
+    border: 2px solid;
+}
+
+.email {
+    width: 100%;
+    padding-left: 15vw;
+}
+
+.email input {
+    width: 100%;
+    border-radius: 50px;
+    color: #000;
+    font-size: large;
+    background-color: #C4C4C4;
+    border-color: #000;
+    border: 2px solid;
+}
+
+.email input:focus {
+    border-color: #C4C4C4;
+    outline: none;
+    border-color: #000;
+    border: 2px solid;
+}
+
+.data-bloqueio {
+
+    width: 35%;
+}
+
+.data-bloqueio input {
+    width: 100%;
+    border-radius: 50px;
+    background-color: #C4C4C4 !important;
+    font-size: large;
+    color: #000 !important;
+}
+
+.permissoes input {
+    text-align: center;
+    border-radius: 50px;
+    background-color: #C4C4C4 !important;
+    font-size: large;
+    color: #000 !important;
+}
+
+.botoes-salvar {
+    width: 100%;
+    font-weight: bold;
+    text-align: right;
+}
+
+.salvar {
+    width: 10%;
+    border-radius: 10px;
+    padding: 1% 0;
+    border: transparent;
+    background-color: #9AD9A3;
+    color: white;
+}
+
+.salvar:hover {
+    cursor: pointer;
+}
+
+.limpar {
+    width: 10%;
+    border-radius: 10px;
+    padding: 1% 0;
+    border: transparent;
+    background-color: #C4C4C4;
+}
+
+.limpar:hover {
+    cursor: pointer;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0px 0;
+}
+
+.textfield>input {
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    background-color: #c4c4c4;
+    color: #000;
+    font-size: 12pt;
+    outline: none;
+    margin-bottom: 0px;
+}
+
+.textfield>input::placeholder {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: larger;
+    color: #00000080;
+}
+
+.textfield .placeholder {
+    position: relative;
+    padding: 0 4px;
+    font-family: Roboto, sans-serif;
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    bottom: 35px;
+    left: 17px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    background: none;
+    pointer-events: none;
+}
+
+.textfield input:valid+.placeholder,
+.textfield input:focus+.placeholder {
+    transform: scale(1.0) translateY(-36px);
+}
+
+.textfield input:focus+.placeholder {
+    color: #000;
+}

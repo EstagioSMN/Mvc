@@ -1,0 +1,42 @@
+@{
+    Layout = null;
+}
+@model string
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <Title>Esqueci Senha</Title>
+    <link rel="stylesheet" href="~/css/EsqueciSenha.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
+</head>
+<body>
+    <div id="modal-center" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" id="id-modal">
+            <form id="id-form" asp-action="NovaSenha" asp-controller="Login" method="post" role="form">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2>Esqueci Senha</h2>
+                <div class="form-campos-nova-senha">
+                    <input class="form-input-text" name="Email" type="email" placeholder="Email" required aria-disabled="true" 
+                        value="@Model">
+                    <span id="spanEmail" class="uk-text-danger"></span>
+                    <input id="senhaNova" class="form-input-text" name="senhaNova" type="password"
+                        placeholder="Nova senha" onkeyup="verificacaoSenha()" required>
+                    <input id="senhaNovaRepetida" class="form-input-text" name="senhaNovaRepetida" type="password"
+                        onkeyup="verificacaoSenha()" placeholder="Repita a nova senha" required>
+                    <span id="spanSenha" class="uk-text-danger"></span>
+                    <input class="botao-enviar" name="enviar" type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
+    <script src="~/js/esqueciSenha.js"></script>
+    <script>
+        UIkit.modal('#modal-center').show();
+    </script>
+</body>
+</html>

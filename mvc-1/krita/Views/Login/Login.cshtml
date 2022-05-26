@@ -1,0 +1,116 @@
+@{
+    Layout = null;
+}
+
+@model Shared.Models.LoginViewModel
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/uikit-rtl.css">
+    <link rel="stylesheet" type="text/css" href="../css/uikit-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/uikit.css">
+    <link rel="stylesheet" type="text/css" href="../css/uikit.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/iziToast/css/iziToast.min.css">
+    <title>Krita</title>
+</head>
+<body>
+    <form id="form-busca" class="form-busca">
+        <main class="main-login">
+            <section class="esquerda-login">
+                <div class="card-login">
+                    <section>
+                        <img class="img" src="../img/smn.png" alt="Krita">
+                    </section>
+                    <h1>Login</h1>
+                    <div class="textfield">
+                        <input id="email" type="text" required spellcheck="false" name="Email">
+                        <label class="placeholder">
+                            E-mail
+                        </label>
+                    </div>
+                    <div class="textfield">
+                        <input id="senha" type="password" required spellcheck="false" name="Senha">
+                        <label class="placeholder">
+                            Senha
+                        </label>
+                    </div>
+                    <div id="erro" class="erro">
+                        @ViewBag.Erro
+                    </div>
+                    <div>
+                        <button class="botao-login" type="submit" value="Entrar" onclick="trocarSenha.login()">Enviar</button>
+                    </div>
+                    <div id="result">
+                    </div>
+                    <div class="link">
+                        <a href="#modal-center-esqueci-senha" uk-toggle>Esqueci Senha</a>
+                        <br>
+                        <a class="btn" href="#modal-center" uk-toggle>Trocar Senha</a>
+                    </div>
+                </div>
+            </section>
+            <section class="main-direita">
+                <img class="img-direita" src="../img/krita.png" alt="Krita">
+            </section>
+        </main>
+    </form> 
+    <div id="modal-center-esqueci-senha" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <form asp-action="Enviar" asp-controller="Login" method="get" role="form">
+                <div class="div-button"><button class="button-fechar" type="button" uk-close></button></div>
+                <p>Preencha o campo abaixo com o e-mail cadastrado no sistema, e será enviado uma mensagem com link para ser feita a alteração da senha.</p>
+                <div class="form-campos">
+                    <input class="campo-email" name="email" type="email" placeholder="Email" required>
+                    <span id="spanEmail" class="uk-text-danger"></span>
+                    <input class="botao-enviar" name="enviar" type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="modal-center" class="uk-flex-top" uk-modal>
+
+            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                <form id="trocarSenha" >
+                    <div class="div-button"><button class="uk-modal-close-default" type="button" uk-close></button></div>
+                    <h2>Trocar Senha</h2>
+                    <div class="uk-margin">
+                        <input class="dados" type="text" name="email" placeholder="Email">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="dados" type="password" name="senhaAtual" placeholder="Senha Atual">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="dados" type="password" name="novaSenha" placeholder="Senha Nova">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="dados" type="password" name="repitaSenhaNova" placeholder="Repita Nova Senha">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="button" type="submit" name="salvar" value="Salvar" onclick= "trocarSenha.verificacaoSenha();">
+                    </div>
+                </form>
+            </div>
+        </div>
+    <script src="~/js/uikit.min.js"></script>
+    <script src="~/js/uikit-icons.min.js"></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/iziToast/js/iziToast.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script>
+        site.init();
+    </script>
+    <script src="~/js/trocarSenha.js"></script>
+        <script>
+            trocarSenha.init({
+                urls: {
+                    trocarSenha: '@Url.Action("TrocarSenha")'
+                }
+            })
+         </script>
+    <script src="~/js/login.js"></script>
+</body>
+</html>

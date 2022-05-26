@@ -1,0 +1,52 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LojadeVestuario
+build_property.RootNamespace = LojadeVestuario
+build_property.ProjectDir = C:\Users\Caio\Desktop\EstagioSMN\mvc\projeto\LojadeVestuario\LojadeVestuario\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Caio\Desktop\EstagioSMN\mvc\projeto\LojadeVestuario\LojadeVestuario
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Caio/Desktop/EstagioSMN/mvc/projeto/LojadeVestuario/LojadeVestuario/Views/Camisas/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtaXNhc1xMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Caio/Desktop/EstagioSMN/mvc/projeto/LojadeVestuario/LojadeVestuario/Views/Home/Categorias.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yaWFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Caio/Desktop/EstagioSMN/mvc/projeto/LojadeVestuario/LojadeVestuario/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Caio/Desktop/EstagioSMN/mvc/projeto/LojadeVestuario/LojadeVestuario/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Caio/Desktop/EstagioSMN/mvc/projeto/LojadeVestuario/LojadeVestuario/Views/Shared/_Carousel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJvdXNlbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Caio/Desktop/EstagioSMN/mvc/projeto/LojadeVestuario/LojadeVestuario/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Caio/Desktop/EstagioSMN/mvc/projeto/LojadeVestuario/LojadeVestuario/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Caio/Desktop/EstagioSMN/mvc/projeto/LojadeVestuario/LojadeVestuario/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Caio/Desktop/EstagioSMN/mvc/projeto/LojadeVestuario/LojadeVestuario/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8l15bgx3b4

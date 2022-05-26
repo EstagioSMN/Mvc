@@ -1,0 +1,16 @@
+global using Microsoft.AspNetCore.Mvc;
+global using Shared.Models;
+global using Services;
+global using System;
+global using System.Net;
+global using System.Net.Mail;
+global using Shared.Settings;
+global using Shared.Interfaces;
+global using krita.Helpers.EmailHandler;
+global using System.IO;
+global using Shared.Dto;
+global using krita.ViewModels;
+global using Newtonsoft.Json;
+global using CriptQuery;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Shared.Extensions;

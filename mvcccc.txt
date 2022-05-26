@@ -1,0 +1,7 @@
+No Controller se for POST 
+
+NO ELSE MODELSTATE NAO PRECISA ME MOSTRAR NADA
+
+if(usuario != null) se ele é mesmo um usuario logado
+
+dotnet add package

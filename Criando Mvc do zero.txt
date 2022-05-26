@@ -1,0 +1,18 @@
+dotnet new mvc -o nome do projeto
+
+dotnet new classlib -o Services
+
+dotnet new classlib -o Shared
+
+apaga o que veio no Services e Shared
+
+Fazer o .gitignore
+Dentr(obj/,bin/)
+
+Arrastar o Models para dentro do Shared
+
+Cria a Classe ApiServices dentro de Services
+no namespace coloca Services
+
+No krita .csproj dentro de propertyGroup vai colocar ProjectReference include de Services e Shared
+

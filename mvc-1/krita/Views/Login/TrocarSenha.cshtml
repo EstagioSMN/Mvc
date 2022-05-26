@@ -1,0 +1,50 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Trocar Senha</title>
+        <link rel="stylesheet" href="~/css/TrocarSenha.css" asp-append-version="true" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/js/site.js"></script>
+        
+    </head>
+    <body>
+        <a class="btn" href="#modal-center" uk-toggle>Trocar Senha</a>
+        <div id="modal-center" class="uk-flex-top" uk-modal>
+
+            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                <form id="trocarSenha" >
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <h2>Trocar Senha</h2>
+                    <div class="uk-margin">
+                        <input class="dados" type="text" name="email" placeholder="Email">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="dados" type="text" name="senhaAtual" placeholder="Senha Atual">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="dados" type="text" name="novaSenha" placeholder="Senha Nova">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="dados" type="text" name="repitaSenhaNova" placeholder="Repita Nova Senha">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="button" type="submit" name="salvar" value="Salvar" onclick= "trocarSenha.verificacaoSenha();">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
+        <script src="~/js/trocarSenha.js"></script>
+        
+    </body>
+</html>

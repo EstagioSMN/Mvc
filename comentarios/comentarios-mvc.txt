@@ -1,0 +1,74 @@
+Criar um projeto mvc: *dotnet new mvc -o "nome do projeto" - VS CODE
+---------------------------------------------------------------------
+VS
+Create new project
+ASP.NET Core Web App
+(Model-View-Controller)C#
+.NET 6.0
+Authentication = None
+HTTPS Sim
+* Quando o Nullable estiveer definido enable vai exigir que todo tipo de referencia seja definido por nullable
+
+*private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }* 
+public IActionResult Privacy()
+        {
+            return View();
+        }
+O cara nao usa
+----------------------------------------------------------------------------
+MVC - Separar os dados ou logica de negocios (Model) da interface do usuario (View)  e do fluxo da aplicação (Controller)
+Model - Representa a parte da aplicação que implementa a logica do MODELO DE DADOS da aplicação e gerencia o comportamento dos dados atraves das REGRAS DE NEGOCIO
+View - Exibe a interface do usuario e em gereal é criada a partir do MODEL via CONTROLLER
+Controller - É o componente que recebe a solicitaçao, trabalha com o MODEL e com base no REQUEST seleciona uma VIEW para ser exibida
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Controllers
+Para criar um controller sufixo = nome do controller com o sufixo Controller
+
+Se quiser retornar uma view com um nome expecifico coloca o nome dentro do () do return do metodo no controller
+
+Criar uma View no controller, clica dentro do metodo com o botao direito e add view
+
+No MVC nao existe uma correspondencia entre ma URL e uma pagina
+
+Uma URL corresponde a uma açao de um controlador
+
+As requesições sao mapeadas para metodos ACTION no COTROLLER
+
+A definiçoão do mapeamento padrao divide todas as requisiçoes de entradaem tres segmentos:
+{Controller}/{action}/{id}
+
+O padrao MVC NAO É A MESMA coisa que uma arquitetura em 3 camadas
+
+O padrao MVC esta relacionado com a arquitetura da aplicaçao e em como os componentes se comunicam.
+-----------------------------------------------------------------------------------------------------------
+Fazendo um carrosel na app, ela sera uma uma partial view e sera criada na pasta View-> Shared nessa pasta o nome do arquivo é criado com "_" na frente
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+A string de conexao é uma expressao que contem os parametros necessarios para que os aplicativos se conectem a um servidor de banco de dados.
+1 - A instancia do servidor
+2 - O nome do banco de dados
+3 - Os detalhes de autenticação
+4 - Outras configurações para se comunicar com o servidor do banco de dados
+Dois tipos de Autenticação
+SQL Server e Windows
+*Connection String
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Populando as tabelas com dados inicias: Migrations 
+1 Criar nova migraçao vazia para popular as tabelas
+OBS: Sera criada o arquivo de script contendo os metodos Up() e Down() vazios
+2 Incluir no metodo Up() as instruçoes INSERT INTO para popular as tabelas
+3 Incluir no metodo Down() as intruções DELETE FROM para desfazer a migração
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Criar interface: O nome tem que iniciar com a letra I por padrao 
+e nao tem implementação e sim um contrato que devera se implementada pela classe concreta
+So usa o GET por ser somente leitura
+Na pasta Repositories é criada uma pasta interfaces, dentro da pasta interfaces ficaram as interface
+e dentro da pasta Repositories ficaram as classes concretas.
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+O @ INDICA para o passe que o codigo depois dele tem que ser rodado de forma especial
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+ 

@@ -1,0 +1,5 @@
+"DefaultConnection": "Data Source =JP_ESTAGIO06\\SQLEXPRESS;Initial Catalog=LojaDatabase; Integrated Security = true"
+Smn
+-----------------------------------------------------------------------------------------------------------------------------
+"DefaultConnection": "Data Source =DESKTOP-MQS9OLI\\SQLEXPRESS;Initial Catalog=LojaDatabase; Integrated Security = true"
+Meu note

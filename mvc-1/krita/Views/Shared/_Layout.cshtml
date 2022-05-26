@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - krita</title>
+    <link rel="stylesheet" href="~/lib/uikit/css/uikit.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/krita.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/iziToast/css/iziToast.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <button class="uk-button uk-button-default colorIconMenu" type="button" uk-icon="icon: menu; ratio:2"
+                uk-toggle="target: #offcanvas-nav"></button>
+            
+            <div id="offcanvas-nav" uk-offcanvas="overlay: false">
+                <div class="uk-offcanvas-bar bgMenu">
+                    <ul class="uk-nav uk-nav-default">
+                        <button class="uk-offcanvas-close"><span uk-icon="icon: arrow-left; ratio: 3"></span></button>
+                        <br><br><br><br>
+                        <li class="uk-active">
+                            <a href="#" class="textomenu"><span uk-icon="icon: home; ratio: 2"></span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="textomenu">
+                                Cliente
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="textomenu">
+                                Colaborador
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="textomenu">
+                                Preço
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="textomenu">
+                                Projeto
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="textomenu">
+                                Usuário
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="uk-inline">
+                <button class="uk-button uk-button-default colorIconUser" type="button" uk-icon="icon: user; ratio:2">
+                </button>
+                <div class="corAreaUser" uk-dropdown="mode: click; pos: bottom-center">
+                    <center> @TempData["Apelido"] </center>
+                    <center> @TempData["Email"] </center>
+                    <div class="linhaHorizontal"></div>
+                    <center><span uk-icon="sign-out">Logout</span></center>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/uikit/js/uikit.min.js"></script>
+    <script src="~/lib/uikit/js/uikit-icons.min.js"></script>
+    <script src="~/lib/iziToast/js/iziToast.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script>
+        site.init();
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

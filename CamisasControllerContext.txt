@@ -1,0 +1,23 @@
+using LojadeVestuario.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+
+namespace LojadeVestuario.Context
+{
+    public class CamisasController : Controller
+    {
+        //Injeção de dependencia               instancia
+        private readonly ICamisasRepository _camisasRepository;
+        public CamisasController(ICamisasRepository camisasRepository)
+        {
+            _camisasRepository = camisasRepository;
+        }
+
+
+        ///Listar as camisas, metodo action: list
+        public IActionResult List()
+        {
+            var camisas = _camisasRepository.Camisas;
+            return View(camisas);
+        }
+    }
+}

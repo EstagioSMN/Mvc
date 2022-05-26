@@ -1,0 +1,37 @@
+Modelo de Domínio 
+Classes que representam a sua lógica de negocio
+
+Roupa
+Nome, preço, descrição curta, descrição longa, imagem, imagem miniatura, categoria, se é a mais vendida, se está em estoque
+
+Como ira vender mais de um tipo de roupa pode definir categoria e as propriedades dela (Nome e descrição)
+
+A partir dai sera criada as classes no exemplo roupa e categoria. Isso faz parte do que chamamos de Abstração
+
+Nesse projeto sera usado a Ferramenta ORM. A ferramenta ORM mapeia as classes para as tabelas do banco de dados
+
+Entity Framework Core
+Abordagem Code-First
+- Gera o Banco de Dados e as tabelas a partir das lasses
+- Primeiro eu crio as classes do modelo de dominio, e depois, usando Entity eu crio o banco de dados e as tabelas com base nas classes
+
+Classes do modelo de dominio ---> Entity Framework Core --Migrations--> Banco de dados
+
+Vantagens de usar o Entity
+- Permitir definir as propriedades e relacionamentos usando código C#
+- Permite abstrair comandos SQL e objetos ADO.NET
+- Permite gerenciar o versionamento do banco de dados usando Migrations
+- Auxilia na produtividade reduzindo o tempo de desenvolvimento
+
+Convenções usadas pelo Entity
+- A propriedade ID ou <NOME_ENTIDADE>ID vai gerar uma chave primaria na tabela
+- As propriedades definidas na classe irao gerar colunas com o mesmo nome na tabela
+- O tipo de dados das colunas geradas a partir dos tipos definidos nas propriedades depende do provedor do banco de dados usado:
+C#(int, string, Decimal, bool, datetime)
+SQL Server(int, nvarchar(Max), decimal(18,2), bit, datetime)
+- A definição do relacionamento entre as entidades é definido em uma propriedade de navegação
+
+Criar classes com propriedades na pasta models
+
+Definir propriedade no VS
+Digita prop e TAB
