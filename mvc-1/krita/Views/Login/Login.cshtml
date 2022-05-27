@@ -6,16 +6,18 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <link rel="stylesheet" type="text/css" href="../css/uikit-rtl.css">
-    <link rel="stylesheet" type="text/css" href="../css/uikit-rtl.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/uikit.css">
-    <link rel="stylesheet" type="text/css" href="../css/uikit.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - krita</title>
     <link rel="stylesheet" type="text/css" href="~/lib/iziToast/css/iziToast.min.css">
-    <title>Krita</title>
+    <link rel="stylesheet" type="text/css" href="~/lib/uikit/css/uikit.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/esqueciSenha.css">
+    <link rel="stylesheet" type="text/css" href="~/css/TrocarSenha.css">
+    <link rel="stylesheet" type="text/css" href="~/css/login.css">
 </head>
+
 <body>
     <form id="form-busca" class="form-busca">
         <main class="main-login">
@@ -26,7 +28,7 @@
                     </section>
                     <h1>Login</h1>
                     <div class="textfield">
-                        <input id="email" type="text" required spellcheck="false" name="Email">
+                        <input id="email" type="email" required spellcheck="false" name="Email">
                         <label class="placeholder">
                             E-mail
                         </label>
@@ -41,7 +43,7 @@
                         @ViewBag.Erro
                     </div>
                     <div>
-                        <button class="botao-login" type="submit" value="Entrar" onclick="trocarSenha.login()">Enviar</button>
+                        <button class="botao-login" type="submit" value="Entrar" onclick="login.login()">Enviar</button>
                     </div>
                     <div id="result">
                     </div>
@@ -56,61 +58,65 @@
                 <img class="img-direita" src="../img/krita.png" alt="Krita">
             </section>
         </main>
-    </form> 
+    </form>
     <div id="modal-center-esqueci-senha" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-            <form asp-action="Enviar" asp-controller="Login" method="get" role="form">
-                <div class="div-button"><button class="button-fechar" type="button" uk-close></button></div>
-                <p>Preencha o campo abaixo com o e-mail cadastrado no sistema, e será enviado uma mensagem com link para ser feita a alteração da senha.</p>
+            <form id="form-receberEmail" role="form">
+                <button class="uk-modal-close-default button-fechar" type="button" uk-close></button>
+                <p>Preencha o campo abaixo com o e-mail cadastrado no sistema, e será enviado uma
+                    mensagem com link para
+                    ser feita a alteração da senha.</p>
                 <div class="form-campos">
                     <input class="campo-email" name="email" type="email" placeholder="Email" required>
                     <span id="spanEmail" class="uk-text-danger"></span>
-                    <input class="botao-enviar" name="enviar" type="submit" value="Enviar">
+                    <input class="botao-enviar" name="enviar" type="submit" value="Enviar"
+                        onclick="login.verificarEmail()">
                 </div>
             </form>
         </div>
     </div>
     <div id="modal-center" class="uk-flex-top" uk-modal>
-
-            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-                <form id="trocarSenha" >
-                    <div class="div-button"><button class="uk-modal-close-default" type="button" uk-close></button></div>
-                    <h2>Trocar Senha</h2>
-                    <div class="uk-margin">
-                        <input class="dados" type="text" name="email" placeholder="Email">
-                    </div>
-                    <div class="uk-margin">
-                        <input class="dados" type="password" name="senhaAtual" placeholder="Senha Atual">
-                    </div>
-                    <div class="uk-margin">
-                        <input class="dados" type="password" name="novaSenha" placeholder="Senha Nova">
-                    </div>
-                    <div class="uk-margin">
-                        <input class="dados" type="password" name="repitaSenhaNova" placeholder="Repita Nova Senha">
-                    </div>
-                    <div class="uk-margin">
-                        <input class="button" type="submit" name="salvar" value="Salvar" onclick= "trocarSenha.verificacaoSenha();">
-                    </div>
-                </form>
-            </div>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <form id="form-trocarSenha">
+                <div class="div-button"><button class="uk-modal-close-default" type="button" uk-close></button></div>
+                <h2>Trocar Senha</h2>
+                <div class="uk-margin">
+                    <input class="dados" type="text" name="email" placeholder="Email">
+                </div>
+                <div class="uk-margin">
+                    <input class="dados" type="password" name="senhaAtual" placeholder="Senha Atual">
+                </div>
+                <div class="uk-margin">
+                    <input class="dados" type="password" name="novaSenha" placeholder="Senha Nova">
+                </div>
+                <div class="uk-margin">
+                    <input class="dados" type="password" name="repitaSenhaNova" placeholder="Repita Nova Senha">
+                </div>
+                <div class="uk-margin">
+                    <input class="buttonsave" type="submit" name="salvar" value="Salvar" onclick="login.verificacaoSenha()">
+                </div>
+            </form>
         </div>
-    <script src="~/js/uikit.min.js"></script>
-    <script src="~/js/uikit-icons.min.js"></script>
-    <script src="~/js/index.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    </div>
+
     <script src="~/lib/iziToast/js/iziToast.min.js"></script>
+    <script src="~/lib/uikit/js/uikit-icons.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/uikit/js/uikit.min.js"></script>
+    <script src="~/js/trocarSenha.js"></script>
+    <script src="~/js/uikit.min.js"></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/js/login.js"></script>
     <script src="~/js/site.js"></script>
     <script>
-        site.init();
+        login.init({
+            urls: {
+                login: '@Url.Action("Login")',
+                trocarSenha: '@Url.Action("TrocarSenha")',
+                esquecisenha: '@Url.Action("Editar")'
+            }
+        })
     </script>
-    <script src="~/js/trocarSenha.js"></script>
-        <script>
-            trocarSenha.init({
-                urls: {
-                    trocarSenha: '@Url.Action("TrocarSenha")'
-                }
-            })
-         </script>
-    <script src="~/js/login.js"></script>
 </body>
+
 </html>

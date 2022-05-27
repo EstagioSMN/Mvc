@@ -176,8 +176,9 @@ body {
 
 .uk-modal-dialog {
     width: 32%;
+    height:30vh;;
     min-width: 300px;
-    padding: 3% 4% 3% 4%;
+    padding: 2.5% 4% 2.5% 4%;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -191,6 +192,8 @@ body {
 .uk-modal-dialog p {
     padding: 0;
     margin: 0;
+    font-weight: 500;
+    font-size: 105%;
 }
 
 .div-button {
@@ -213,9 +216,9 @@ body {
     border: 0px;
     width: 65%;
     height: 2.25vh;
-    padding: 1%;
-    padding-left: 1.5%;
-    margin: 1.5%;
+    padding: 3%;
+    padding-left: 5%;
+    margin: 6%;
     font-size: medium;
     background: #C4C4C4;
 }
@@ -239,7 +242,7 @@ body {
 
 .button-fechar {
     margin: 0;
-    padding: 0;
+    padding: 1.5%;
 }
 
 /* TrocarSehna */

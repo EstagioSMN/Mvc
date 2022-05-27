@@ -1,0 +1,253 @@
+body {
+    background-color: darkolivegreen;
+    width: 100vw;
+}
+
+.uk-modal-dialog {
+    background-color: none;
+    border-radius: 50px;
+}
+
+.modal-bloquear {
+    background-color: #253840;
+    border: 1px solid #FA0A0A;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.modal-bloquear h2 {
+    color: white;
+    margin-top: 2%;
+}
+
+.uk-form-stacked {
+    width: 100%;
+}
+
+.texto-bloquear {
+    width: 80%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #FA0A0A;
+    border-radius: 30px;
+    font-size: large;
+    color: black;
+    margin: 0 auto;
+    padding: 2% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.texto-bloquear p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.butoes-bloquear {
+    width: 100%;
+    font-weight: bold;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.confirmar-bloquear {
+    width: 20%;
+    padding: 1% 0;
+    border: 1px solid #000;
+    background-color: #9AD9A3;
+}
+.confirmar-bloquear:hover {
+    cursor: pointer;
+    background-color: #5ABF69;
+}
+
+.fechar-bloquear {
+    width: 20%;
+    padding: 1% 0;
+    margin-left: 15%;
+    border: 1px solid #000;
+    background-color: #C4C4C4;
+}
+.fechar-bloquear:hover {
+    cursor: pointer;
+    background-color: #898989;
+}
+
+.modal-desbloquear {
+    background-color: #253840;
+    border: 1px solid #FA0A0A;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.modal-desbloquear h2 {
+    color: white;
+    margin-top: 2%;
+}
+
+.texto-desbloquear {
+    width: 80%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #FA0A0A;
+    border-radius: 30px;
+    font-size: large;
+    color: black;
+    margin: 0 auto;
+    padding: 2% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.texto-desbloquear p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.butoes-desbloquear {
+    width: 100%;
+    font-weight: bold;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.confirmar-desbloquear {
+    width: 20%;
+    padding: 1% 0;
+    border: 1px solid #000;
+    background-color: #9AD9A3;
+}
+
+.fechar-desbloquear {
+    width: 20%;
+    padding: 1% 0;
+    margin-left: 15%;
+    border: 1px solid #000;
+    background-color: #C4C4C4;
+}
+.fechar-desbloquear:hover {
+    cursor: pointer;
+    background-color: #898989;
+}
+
+
+.div-principal {
+    height: 100vh;
+    width: 100vw;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.modal-editar {
+    background-color: #F2F2F2;;
+    height: max-content;
+    padding: 1%;
+    border-radius: 20px;
+}
+
+.inputs-primeira-linha {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: row;
+}
+
+.username {
+    width: 80%;
+}
+.username input{
+    width: 100%;
+    border-radius: 50px;
+    color: #000;
+    font-size: large;
+    background-color: #C4C4C4;
+}
+.username input:focus{
+    border-color: #C4C4C4;
+    outline: none;
+} 
+
+.email {
+    width: 100%;
+    padding-left: 15vw;
+}
+.email input{
+    width: 100%;
+    border-radius: 50px;
+    background-color: #C4C4C4 !important;
+    font-size: large;
+    color: #000 !important;
+}
+
+.data-bloqueio {
+    width: 37.5%;
+}
+.data-bloqueio input{
+    width: 90%;
+    border-radius: 50px;
+    background-color: #C4C4C4 !important;
+    font-size: large;
+    color: #000 !important;
+}
+
+.permissoes input{
+    text-align: center;
+    border-radius: 50px;
+    background-color: #C4C4C4 !important;
+    font-size: large;
+    color: #000 !important;
+}
+
+.botoes-editar {
+    width: 100%;
+    font-weight: bold;
+    text-align: right;
+}
+
+.salvar {
+    width: 10%;
+    border-radius: 10px;
+    padding: 1% 0;
+    border: transparent;
+    background-color: #9AD9A3; 
+    color: white;
+}
+.salvar:hover {
+    cursor: pointer;
+}
+
+.limpar {
+    width: 10%;
+    border-radius: 10px;
+    padding: 1% 0;
+    border: transparent;
+    background-color: #C4C4C4;
+}
+.limpar:hover {
+    cursor: pointer;
+} 

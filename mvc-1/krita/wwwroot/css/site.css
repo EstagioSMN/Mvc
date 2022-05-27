@@ -13,42 +13,46 @@ html {
 body {
   font-family: 'Ubuntu', sans-serif;
   margin-bottom: 60px;
-  background-color: #253840;
-  height: 100vh;
+  background-color: #253840!important;
+  height: content;
+  width: 100vw;
 }
 
 .menu {
-  background-color: #465459;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  height: 8vh;
+  background-color: #465459!important;
+  display: flex!important;
+  justify-content: space-between!important;
+  align-items: center!important;
+  flex-direction: row!important;
+  height: 8vh!important;
 }
 
 .colorIconMenu {
-  margin-left: 5vw;
-  color: #CCCCCC;
-  background-color: none;
-  border: none;
+  margin-left: 5vw!important;
+  color: #CCCCCC!important;
+  background-color: none!important;
+  border: none!important;
 }
 
 .uk-offcanvas-close {
   background-color: transparent;
   border: none;
-  color: #CCCCCC;
+  color: #CCCCCC!important;
   left: 1.5vw;
   width: fit-content;
 }
 
 .uk-offcanvas-close:hover {
-  color: #253840;
+  color: #253840!important;
   cursor: pointer;
 }
 
 .colorIconUser {
   margin-right: 5vw;
   color: #CCCCCC !important;
+  border: none;
+}
+.colorIconMenu span {
   border: none;
 }
 
@@ -84,11 +88,11 @@ a.textomenu:active {
 
 .corAreaUser {
   border-radius: 15px;
-  background-color: #c4c4c4;
+  background-color: #c4c4c4!important;
   color: #000;
 }
 
 .linhaHorizontal {
   width: 100%;
-  border: 1px solid #000;
+  border: 1px solid #000!important;
 }

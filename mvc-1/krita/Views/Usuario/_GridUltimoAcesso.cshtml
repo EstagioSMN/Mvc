@@ -1,0 +1,101 @@
+@{
+    Layout = null;
+}
+
+@model IEnumerable<RespostaBusca>;
+
+<table class="uk-table uk-table-divider">
+    <thead>
+        <tr>
+            <th class="campo">Cód. Usuário</th>
+            <th class="campo">Apelido</th>
+            <th class="campo">Email</th>
+            <th class="campo">Data de bloqueio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var acessos in Model)
+            {
+                <tr>
+                    <td class = "resultado">@acessos.Id</td>
+                    <td class = "resultado">@acessos.Apelido</td>
+                    <td class = "resultado">@acessos.Email</td>
+                    <td class = "resultado">@acessos.DataBloqueio</td>
+                    <td><a uk-toggle="target: #modal-editar" onclick="usuario.preencheModalEditar('@acessos.Id', '@acessos.Apelido', '@acessos.Email', '@acessos.DataBloqueio')"><span uk-icon="icon: file-edit"></span></a></td>
+                    <td>
+                        @if (@acessos.DataBloqueio == null)
+                        {
+                            <a href="#" uk-toggle="target: #modal-bloquear" onclick="usuario.preencheModalEditar('@acessos.Id')"><span uk-icon="icon: unlock"></span></a><br>
+                        }
+                        else
+                        {
+                            <a href="#" uk-toggle="target: #modal-desbloquear" onclick="usuario.preencheModalEditar('@acessos.Id')"><span uk-icon="icon: lock"></span></a>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div id="modal-bloquear" class="div-principal uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-margin-auto-vertical">
+        <div class="modal-bloquear">
+            <h2 class="uk-modal-title titulo"><span uk-icon="icon: warning; ratio: 1.5"></span> BLOQUEAR</h2>
+            <form id="form-bloquear" class="uk-form-stacked" onsubmit="usuario.bloquearUsuario()" role="form">
+                <div class="texto-bloquear">
+                    <p>Deseja bloquear o usuário selecionado?</p>
+                </div>
+                <input class="uk-input" name="Id" type="text" style="display: none;" placeholder="Id" />
+                <input class="uk-input" name="Bloqueado" type="text" style="display: none;" value="1" placeholder="Id" />
+                <div class="butoes-bloquear">
+                    <input class="button confirmar-bloquear" name="enviar" type="submit" value="Sim" />
+                    <button class="uk-modal-close fechar-bloquear" type="button">Não</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="modal-editar" class="div-principal uk-modal-container uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-margin-auto-vertical  modal-editar">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <form id="form-editar" class="uk-form-stacked" onsubmit="usuario.editarUsuario()" role="form">
+            <h2 class="uk-modal-title titulo"> Usúario </h2>
+            <div class="inputs-primeira-linha">
+                <div class="username">
+                    <label class="uk-form-label uk-text-large">Apelido*</label>
+                    <input class="uk-input" name="Id" type="text" style="display: none;" placeholder="Id">
+                    <input id="text-apelido" class="uk-input" name="Apelido" type="text" placeholder="Apelido" maxlength="36" required>
+                </div>
+                <div class="email">
+                    <label class="uk-form-label uk-text-large">E-mail</label>
+                    <input class="uk-input" type="text" placeholder="Email" name="email" disabled>
+                </div>
+            </div>
+            <div class="data-bloqueio">
+                <label class="uk-form-label uk-text-large">Data de Bloqueio</label>
+                <input class="uk-input" type="text" placeholder="Data de Bloqueio" name="DataBloqueio"  disabled >
+            </div>
+            <br>
+            <div class="permissoes">
+                <input class="uk-input" type="text" placeholder="Permissoes" disabled value="Permissões do Usuario">
+            </div>
+            <br><br><br><br><br><br><br><br><br>
+            <div class="botoes-editar">
+                <input class="button limpar" name="enviar" type="reset" value="Limpar">
+                <input class="button salvar" name="enviar" type="submit" value="Salvar">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/Usuario.js"></script>
+<script>
+    usuario.init({
+        urls: {
+            bloquear: '@Url.Action("Bloquear")',
+            editar: '@Url.Action("Editar")'
+        }
+    });
+</script>

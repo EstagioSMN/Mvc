@@ -3,6 +3,7 @@ const form = document.getElementById("id-form");
 const email = document.getElementById('email');
 const senhaNova = document.getElementById('senhaNova');
 const senhaNovaRepetida = document.getElementById('senhaNovaRepetida');
+var pattern = /^[^ ]+@[^ ]+.[a-z]{2,3}$/;
 
 function verificacaoEmail(){
     if(email.value.matches(pattern)){

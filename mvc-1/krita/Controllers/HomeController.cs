@@ -13,11 +13,8 @@ public class HomeController : AuthenticatedController
 
     public async Task<IActionResult> Index()
     {
-
         ApiServices client = new ApiServices();
-        HttpResponseMessage response = await client.Client.GetAsync(client.Url);
-        TempData["Apelido"] = UsuarioLogado.Apelido;
-        TempData["Email"] = UsuarioLogado.Email;
+        HttpResponseMessage response = await client.Client.GetAsync(client.Url); 
         return View();
     }
 }

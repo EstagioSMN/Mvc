@@ -9,6 +9,8 @@ namespace krita.Controllers
             base.OnActionExecuting(context);
 
             UsuarioLogado = HttpContext.GetSession();
+            TempData["Apelido"] = UsuarioLogado.Apelido;
+            TempData["Email"] = UsuarioLogado.Email;
 
             var user = context.HttpContext.Session.Get<string>("Token");
             if (string.IsNullOrEmpty(user))

@@ -1,0 +1,85 @@
+@model krita.ViewModels.Usuario.BuscarViewModel;
+
+@{
+    ViewData["Title"] = "Usuario";
+    Layout = "_Layout";
+}
+    <div class="overlay"></div>
+        <div class="consulta">
+            <form id="form-busca" class="form-busca" onsubmit="usuario.buscar(this)">
+                <div class="form-busca-inputs">
+                    <input class="uk-input codigo-usuario" type="text" placeholder="Cód. Usuário" name="Id">
+                    <input class="uk-input username" type="text" placeholder="Apelido" name="Apelido">
+                    <input class="uk-input Email" type="email" placeholder="E-mail" name="Email">
+                    <button class="uk-button uk-button-default" type="submit"><span uk-icon="search"></span></button>       
+                </div>
+                <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid div-bloqueado">
+                    <label class="bloqueado">Bloqueados:
+                        <label><input class="uk-radio" type="radio" name="Bloqueado" value="0"> Sim </label>
+                        <label><input class="uk-radio" type="radio" name="Bloqueado" value="1"> Não </label>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="conteudo">
+            <br />
+            <input class="uk-radio" type="radio" name="Resultado" value="ResultadoPesquisa" id="Pesquisa" checked>
+            <label for="Pesquisa">RESULTADOS DA PESQUISA</label>
+            <input class="uk-radio" type="radio" name="Resultado" value="UltimoAcesso" id="Acesso">
+            <label for="Acesso">ÚLTIMOS ACESSOS</label>
+                <div id="ResultadoPesquisa"></div>
+                <div id="UltimoAcesso"></div>
+        </div>
+    </div>
+
+    <div class="botao-cadastrar">
+        <a href="#" uk-toggle="target: #modal-editar" uk-icon="icon: plus; ratio: 2"></a>
+    </div>
+    <div id="modal-cadastrar" class="div-principal uk-modal-container uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-margin-auto-vertical  modal-editar">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <form id="form-cadastro" class="uk-form-stacked" role="form">
+                <h2 class="uk-modal-title titulo-cadastrar-usuario"> Insira os dados do Usuário </h2>
+                <div class="inputs-primeira-linha">
+                    <div class="username">
+                        <div class="textfield">
+                            <input class="uk-input" name="Apelido" type="text" placeholder="" required
+                                spellcheck="false">
+                            <span class="placeholder">Apelido</span>
+                        </div>
+                    </div>
+                    <div class="email">
+                        <div class="textfield">
+                            <input class="uk-input" name="Email" type="text" required spellcheck="false">
+                            <span class="placeholder">Email</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="data-bloqueio">
+                    <input class="uk-input" type="text" placeholder="Data de Bloqueio" disabled value="">
+                </div>
+                <br>
+                <div class="permissoes">
+                    <input class="uk-input" type="text" placeholder="" disabled value="Permissões do Usuario">
+                </div>
+                <br><br><br><br><br><br><br><br>
+                <div class="botoes-salvar">
+                    <input class="button limpar" name="enviar" type="reset" value="Limpar">
+                    <button class="button salvar" name="enviar" type="submit" value="Salvar" onclick="usuario.cadastro()">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="~/js/Usuario.js"></script>
+    <script src="~/js/site.js"></script>
+    <script>
+        usuario.init({
+            urls: {
+                buscar: '@Url.Action("Buscar")',
+                cadastro: '@Url.Action("Cadastrar")'
+            }
+        })
+    </script>
+</html>

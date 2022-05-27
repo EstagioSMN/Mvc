@@ -21,6 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    outline: none;
 }
 
 .dados {
@@ -32,7 +33,7 @@ body {
     padding: 1%;
     padding-left: 1.5%;
     margin: 1.5%;
-
+    outline: none;
     font-size: medium;
 
     background: #C4C4C4;
@@ -42,19 +43,20 @@ body {
     outline: none;
 }
 
-.button {
+.buttonsave {
     height: 3.25vh;
     width: 16%;
     border-radius: 7px;
     border: 0px;
     margin: 1.5%;
     
-    background: #9AD9A3 ;
+    background-color: #9AD9A3 ;
     color: #FFFFFF;
     font-size: medium;
 }
-.button:hover{
-    background-color: #253840;
+.buttonsave:hover{
+    cursor: pointer;
+    background-color: #5ABF69;
 }
 
 .btn {

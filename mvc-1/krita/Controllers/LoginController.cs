@@ -46,7 +46,7 @@ namespace krita.Controllers
             return View("EsqueciSenha", emailDescriptografado);
         }
 
-        [HttpGet("Enviar")]
+        [HttpGet("enviar")]
         public async Task<IActionResult> Enviar(string email)
         {
             var criptografandoEmail = new SecureQueryString();

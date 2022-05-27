@@ -7,5 +7,6 @@ global using Shared.Models;
 global using System.IdentityModel.Tokens.Jwt;
 global using System.Linq;
 global using System.Net.Http;
+global using Shared.Extensions;
 global using Microsoft.AspNetCore.Mvc;
 global using System.ComponentModel.DataAnnotations;
