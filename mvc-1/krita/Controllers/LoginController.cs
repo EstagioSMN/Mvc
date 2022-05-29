@@ -18,7 +18,7 @@ namespace krita.Controllers
                 
             return View();
         } 
-
+        
         [HttpPost("SenhaTrocada")]
         public async Task<IActionResult> SenhaTrocada (SenhaTrocadaDto senhaTrocadaDto)
         {
