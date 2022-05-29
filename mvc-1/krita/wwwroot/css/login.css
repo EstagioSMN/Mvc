@@ -10,8 +10,10 @@
 body {
     font-family: 'Ubuntu', sans-serif;
     background-color: #253840;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     height: 100vh;
 }
 
@@ -36,7 +38,7 @@ body {
 }
 
 .main-direita {
-    width: 35vw;
+    width: 50vw;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -48,7 +50,7 @@ body {
 }
 
 .esquerda-login {
-    width: 40vw;
+    width: 50vw;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -72,14 +74,14 @@ body {
     height: 4.0vh;
     max-width: 100%;
     height: auto;
-    margin-top: 200%;
+    margin-top: 5vh;
 }
 
 .card-login>h1 {
-    font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     color: #FFF;
-    margin-bottom: 50px;
+    margin-bottom: 5vh;
+    margin-top: 3.5vh;
 }
 
 .textfield {
@@ -88,31 +90,17 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin: 10px 0;
-}
-
-.textfield>input {
-    width: 100%;
-    border: none;
-    border-radius: 50px;
-    padding: 15px;
-    background-color: #c4c4c4;
-    color: #000;
-    font-size: 12pt;
-    outline: none;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 .textfield .placeholder {
     position: relative;
-    padding: 0 4px;
-    font-family: 'Ubuntu', sans-serif;
     color: #000;
     display: flex;
     align-items: center;
     font-size: larger;
-    bottom: 45px;
-    left: 17px;
+    bottom: 5vh;
+    left: 1.5vw;
     transition: all 0.2s;
     transform-origin: 0% 0%;
     background: none;
@@ -129,44 +117,94 @@ body {
     color: #c4c4c4;
 }
 
-.textfield input:focus+.placeholder {
-    color: #c4c4c4;
+.textfield .placeholder-esqueci-senha {
+    position: relative;
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    bottom: 5vh;
+    left: 1.5vw;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    background: none;
+    pointer-events: none;
 }
 
-.erro{
-    margin-top: -8%;
-    margin-left: -50%;
-    font-family: 'Ubuntu', sans-serif;
-    text-decoration:underline;
-    color: #f00;
+.textfield input:valid+.placeholder-esqueci-senha,
+.textfield input:focus+.placeholder-esqueci-senha {
+    transform: scale(1.0) translateY(-36px);
+}
+
+.input-login {
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-radius: 50px;
+    background-color: #c4c4c4;
+    color: #000;
+    font-size: 0.8rem;
+    outline: none;
+    margin-bottom: 1%;
+    padding: 5%; 
+}
+
+.input-enviar-email {
+    margin-top: 5vh;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-radius: 50px;
+    background-color: #c4c4c4;
+    color: #000;
+    font-size: 0.8rem;
+    outline: none;
+    margin-bottom: 1%;
+    padding: 5%;
+}
+
+.input-esqueci-senha {
+    margin-top: 5vh;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-radius: 50px;
+    background-color: #c4c4c4;
+    color: #000;
+    font-size: 0.8rem;
+    outline: none;
+    margin-bottom: 1%;
+    padding: 5%;
 }
 
 .botao-login {
-    width: 7.70vw;
+    width: max-content;
+    padding: 0 30%;
     height: 4.5vh;
-    margin: 25px;
-    font-size: 22px;
-    font-family: 'Ubuntu', sans-serif;
+    margin: 2.5vh auto;
+    font-size: 1.2rem;
     border: none;
     border-radius: 10px;
-    font-weight: 800;
+    font-weight: 400;
     color: #fff;
     background-color: #9AD9A3;
+}
+.botao-login:hover {
+    background-color: #5ABF69;
     cursor: pointer;
 }
 .botao-login:active {
-    background-color: #3e8e41;
+    background-color: #5ABF69;
     transform: translateY(2px);
 }
 
 .link {
-    margin-top: 4%;
-    margin-left: -60%;
+    width: 100%;
     align-items: left;
     margin-bottom: 1%;
 }
 .link a {
-    font-size: 2.03vh;
+    font-size: 1rem;
     color: #FFF;
     text-decoration:underline;
 }
@@ -174,22 +212,36 @@ body {
     color: #9AD9A3;
 }
 
-.uk-modal-dialog {
-    width: 32%;
-    min-width: 300px;
-    padding: 3% 4% 3% 4%;
+.modal-enviar-email {
+    width: 400px;
+    height:max-content;
+    padding: 2.5% 4% 2.5% 4%;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 15px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu;
-}
-.uk-button {
-
 }
 
-.uk-modal-dialog p {
+.modal-enviar-email p {
     padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.modal-esqueci-senha {
+    width: 400px;
+    height:max-content;
+    padding: 2.5% 4% 2.5% 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.modal-esqueci-senha h2 {
     margin: 0;
 }
 
@@ -202,110 +254,95 @@ body {
     padding: 0;
 }
 
-.uk-modal-dialog .form-campos {
+.form-campos {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.uk-modal-dialog .form-campos .campo-email {
-    border-radius: 15px;
-    border: 0px;
-    width: 65%;
-    height: 2.25vh;
-    padding: 1%;
-    padding-left: 1.5%;
-    margin: 1.5%;
-    font-size: medium;
-    background: #C4C4C4;
+.botao-enviar {
+    width: max-content;
+    padding: 0 5%;
+    height: 4.5vh;
+    margin: 2.5vh auto;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 400;
+    color: #fff;
+    background-color: #9AD9A3;
 }
-.uk-modal-dialog .form-campos .campo-email:focus {
-    outline: none;
+.botao-enviar:hover {
+    background-color: #5ABF69;
 }
-
-.uk-modal-dialog .form-campos .botao-enviar {
-    height: 3.25vh;
-    width: 16%;
-    border-radius: 7px;
-    border: 0px;
-    margin: 1.5%;
-    background: #9AD9A3;
-    color: #FFFFFF;
-    font-size: medium;
-}
-.botao-enviar:hover{
-    cursor: pointer;
+.botao-enviar:active {
+    background-color: #5ABF69;
+    transform: translateY(2px);
 }
 
 .button-fechar {
     margin: 0;
-    padding: 0;
+    padding: 1.5%;
 }
 
-/* TrocarSehna */
-
-.uk-modal-dialog uk-modal-body uk-margin-auto-vertical {
-    width: 50vw;
-    min-width: 750px;
-    height: 55vh;
-    padding: 3% 4% 3% 4%;
-
+.modal-trocar-senha {
+    width: 400px;
+    height:max-content;
+    padding: 2.5% 4% 2.5% 4%;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 15px;
-
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu;
 }
 
-.campos {
+.modal-trocar-senha h2 {
+    margin: 0;
+}
+
+.input-trocar-senha {
+    margin: 2.5vh auto 0 auto;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-radius: 50px;
+    background-color: #c4c4c4;
+    color: #000;
+    font-size: 0.8rem;
+    outline: none;
+    margin-bottom: 1%;
+    padding: 5% 10vw;
+}
+
+.btn-entrar {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.dados {
-    border-radius: 15px;
-    border: 0px;
-
-    width: 65%;
-    height: 3vh;
-    padding: 1%;
-    padding-left: 1.5%;
-    margin: 1.5%;
-
-    font-size: medium;
-
-    background: #C4C4C4;
+#senhaNovaRepetida {
+    margin-top: -0.1vh;
 }
 
-.input:focus {
-    outline: none;
-}
+@media (max-width:801px) {
+    .main-direita {
+        display: none;
+    }
 
-.button {
-    height: 3.25vh;
-    width: 16%;
-    border-radius: 7px;
-    border: 0px;
-    margin: 1.5%;
-    
-    background: #9AD9A3 ;
-    color: #FFFFFF;
-    font-size: medium;
-}
-.button:hover{
-    background-color: #253840;
-}
+    .card-login {
+        width: 80vw;
+    }
 
-.btn {
-    height: 3.25vh;
-    width: 16%;
-    border-radius: 7px;
-    border: 0px;
-    margin: 1.5%;
-    
-   
-    color: #FFFFFF;
-    font-size: medium;
+    .main-login {
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    .esquerda-login {
+        width: 60vw;
+    }
+
+    .textfield .placeholder-esqueci-senha {
+        left: 3vw;
+    }
 }

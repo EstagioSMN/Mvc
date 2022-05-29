@@ -1,6 +1,5 @@
 ﻿var site = (function()  {
     var config = {
-
     };
 
     var init = function ($config) {

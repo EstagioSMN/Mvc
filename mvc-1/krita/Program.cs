@@ -7,7 +7,6 @@ IConfiguration configurations = builder.Configuration;
 var appSettings = configurations.Get<AppSettings>();
 
 builder.Services.AddSingleton(appSettings);
-builder.Services.AddScoped<IEmailHandler, EmailHandler>();
 builder.Services.AddSession(options =>
 {
     options.Cookie.HttpOnly = true;
