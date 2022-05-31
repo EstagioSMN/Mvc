@@ -20,11 +20,11 @@ namespace krita.Controllers
         } 
         
         [HttpPost("SenhaTrocada")]
-        public async Task<IActionResult> SenhaTrocada (SenhaTrocadaDto senhaTrocadaDto)
+        public async Task<IActionResult> SenhaTrocada(SenhaTrocadaDto senhaTrocadaDto)
         {
             ApiServices client = new ApiServices("usuario/trocar-senha");
             HttpResponseMessage response = await client.Client.PostAsJsonAsync(client.Url, senhaTrocadaDto);
-            
+
             if (response.IsSuccessStatusCode)
             {
                 client.Close();

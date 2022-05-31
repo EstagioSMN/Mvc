@@ -99,7 +99,7 @@ body {
     display: flex;
     align-items: center;
     font-size: larger;
-    bottom: 5vh;
+    bottom: 4vh;
     left: 1.5vw;
     transition: all 0.2s;
     transform-origin: 0% 0%;
@@ -117,13 +117,95 @@ body {
     color: #c4c4c4;
 }
 
-.textfield .placeholder-esqueci-senha {
+.textfield-enviar-email {
+    position: relative;
+    width: 70%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 2.5vh;
+}
+
+.textfield-enviar-email .placeholder-enviar-email {
+    position: absolute;
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    margin-bottom: -17px;
+    margin-left: 15px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    background: none;
+    pointer-events: none;
+}
+
+.textfield-enviar-email>input:focus{
+    background-color: #ededed;
+}
+
+.textfield-enviar-email input:valid+.placeholder-enviar-email,
+.textfield-enviar-email input:focus+.placeholder-enviar-email {
+    transform: scale(1.0) translateY(-26px);
+    color: #c4c4c4;
+}
+
+.textfield-esqueci-senha {
+    width: 160%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.textfield-esqueci-senha .placeholder-esqueci-senha {
     position: relative;
     color: #000;
     display: flex;
     align-items: center;
     font-size: larger;
-    bottom: 5vh;
+    margin-top: -35px;
+    margin-left: 15px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    background: none;
+    pointer-events: none;
+}
+
+.textfield-esqueci-senha>input:focus{
+    background-color: #ededed;
+}
+
+.textfield-esqueci-senha input:valid+.placeholder-esqueci-senha,
+.textfield-esqueci-senha input:focus+.placeholder-esqueci-senha {
+    transform: scale(1.0) translateY(-36px);
+    color: #c4c4c4;
+}
+
+.textfield-trocar-senha {
+    width: 125%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 2.5vh;
+}
+
+.textfield-trocar-senha>input:focus{
+    background-color: #ededed;
+}
+
+.textfield-trocar-senha .placeholder-esqueci-senha {
+    position: relative;
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    bottom: 6vh;
     left: 1.5vw;
     transition: all 0.2s;
     transform-origin: 0% 0%;
@@ -131,50 +213,50 @@ body {
     pointer-events: none;
 }
 
-.textfield input:valid+.placeholder-esqueci-senha,
-.textfield input:focus+.placeholder-esqueci-senha {
+.textfield-trocar-senha input:valid+.placeholder-esqueci-senha,
+.textfield-trocar-senha input:focus+.placeholder-esqueci-senha {
     transform: scale(1.0) translateY(-36px);
 }
 
 .input-login {
     width: 100%;
-    height: 5vh;
+    height: 15px;
     border: none;
     border-radius: 50px;
     background-color: #c4c4c4;
     color: #000;
-    font-size: 0.8rem;
+    font-size: 1rem;
     outline: none;
     margin-bottom: 1%;
     padding: 5%; 
 }
 
 .input-enviar-email {
-    margin-top: 5vh;
+    margin: 2.5vh auto 0 auto;
     width: 100%;
-    height: 5vh;
+    height: 3vh;
     border: none;
     border-radius: 50px;
     background-color: #c4c4c4;
     color: #000;
-    font-size: 0.8rem;
+    font-size: 1rem;
     outline: none;
     margin-bottom: 1%;
-    padding: 5%;
+    padding: 15px;
+    
 }
 
 .input-esqueci-senha {
-    margin-top: 5vh;
     width: 100%;
-    height: 5vh;
+    height: 3.7vh;
     border: none;
     border-radius: 50px;
     background-color: #c4c4c4;
     color: #000;
-    font-size: 0.8rem;
+    font-size: 1rem;
     outline: none;
     margin-bottom: 1%;
-    padding: 5%;
+    padding: 0 15px;
 }
 
 .botao-login {
@@ -213,7 +295,7 @@ body {
 }
 
 .modal-enviar-email {
-    width: 400px;
+    width: 700px;
     height:max-content;
     padding: 2.5% 4% 2.5% 4%;
     display: flex;
@@ -231,7 +313,7 @@ body {
 }
 
 .modal-esqueci-senha {
-    width: 400px;
+    width: 550px;
     height:max-content;
     padding: 2.5% 4% 2.5% 4%;
     display: flex;
@@ -286,7 +368,7 @@ body {
 }
 
 .modal-trocar-senha {
-    width: 400px;
+    width: 800px;
     height:max-content;
     padding: 2.5% 4% 2.5% 4%;
     display: flex;
@@ -311,7 +393,7 @@ body {
     font-size: 0.8rem;
     outline: none;
     margin-bottom: 1%;
-    padding: 5% 10vw;
+    padding: 3.75% 18.5vw 3.75% 1.5vw;
 }
 
 .btn-entrar {
@@ -342,7 +424,79 @@ body {
         width: 60vw;
     }
 
-    .textfield .placeholder-esqueci-senha {
+    .modal-trocar-senha {
+        width: 80%;
+    }
+
+    .input-trocar-senha {
+        padding: 5% 18.5vw 5% 1.5vw;
+    }
+
+    .modal-enviar-email {
+        width: 80%;
+    }
+
+    .textfield .placeholder {
+        position: relative;
+        color: #000;
+        display: flex;
+        align-items: center;
+        font-size: larger;
+        bottom: 5vh;
+        left: 1.5vw;
+        transition: all 0.2s;
+        transform-origin: 0% 0%;
+        background: none;
+        pointer-events: none;
+    }
+
+    .textfield-enviar-email .placeholder-enviar-email {
+        font-size: 1rem;
+        bottom: 4.75vh;
         left: 3vw;
+    }
+
+    .input-enviar-email {
+        padding: 15px;
+    }
+
+    .modal-esqueci-senha {
+        width: 500px;
+    }
+
+    .textfield-esqueci-senha .placeholder-esqueci-senha {
+        font-size: 1rem;
+        bottom: 4.75vh;
+        left: 3vw;
+    }
+
+    .textfield-enviar-email .placeholder-enviar-email {
+        font-size: larger;
+        margin-bottom: -20px;
+        margin-left: -10px;
+    }
+
+    .textfield-esqueci-senha {
+        width: 160%;
+        height: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 2.5vh;
+    }
+    
+    .textfield-esqueci-senha .placeholder-esqueci-senha {
+        position: relative;
+        color: #000;
+        display: flex;
+        align-items: center;
+        font-size: larger;
+        bottom: 5.25vh;
+        left: 1.5vw;
+        transition: all 0.2s;
+        transform-origin: 0% 0%;
+        background: none;
+        pointer-events: none;
     }
 }

@@ -13,20 +13,20 @@ var login = (function () {
     function verificacaoSenha() {
         model = $('#form-trocarSenha').serializeObject();
 
-        if(model['novaSenha']!=model['repitaSenhaNova']){
-            site.toast.error("Senhas diferentes.");
+        if (model['novaSenha'] != model['repitaSenhaNova']) {
+            site.toast.error("Senhas precisam ser iguais. ");
             return;
-        } else if(model['novaSenha'].length() < 6){
-            site.toast.error("Sua senha deve pussuir no mínimo 6 dígitos.");
+        } else if (model['novaSenha'].length < 6) {
+            site.toast.error("Sua senha deve possuir no mínimo 6 dígitos.");
             return;
         }
-        
+
         $.post("https://localhost:7054/Login/SenhaTrocada", model).done(function () {
-            site.toast.success("Senha trocada com sucesso!");
+            site.toast.success("Senha alterada com sucesso");
             $('#modal-trocar-senha').hide();
             $('#form-trocarSenha').find('[name="email"], [name="senhaAtual"], [name="novaSenha"], [name="repitaSenhaNova"]').val('');
-        }).fail(function () {
-            site.toast.error("Falha ao trocar senha");
+        }).fail(function (msg) {
+            site.toast.error(msg);
         });
     };
 
@@ -38,21 +38,19 @@ var login = (function () {
                 site.toast.success("Email enviado com sucesso!");
                 $('#modal-enviar-email').hide();
                 $('#form-receberEmail').find('[name="email"]').val('');
-            }).fail(function () {
-                site.toast.error("Falha ao enviar email");
+            }).fail(function (msg) {
+                site.toast.error(msg);
             });
-        } else {
-            site.toast.error("Falha ao enviar email");
-        }
     };
+   };
 
     function esqueciSenha() {
         model = $('#form-esqueci-senha').serializeObject();
-        if(model['senhaNova'].length < 6){
-            site.toast.error("Sua senha deve pussuir no mínimo 6 dígitos.");
+        if (model['senhaNova'].length < 6) {
+            site.toast.error("Sua senha deve possuir no mínimo 6 dígitos.");
             $('#form-esqueci-senha').find('[name="senhaNova"], [name="senhaNovaRepetida"]').val('');
-        } 
-        else if(model['senhaNova'] != model['senhaNovaRepetida']){
+        }
+        else if (model['senhaNova'] != model['senhaNovaRepetida']) {
             site.toast.error("Senhas precisam ser iguais.");
             $('#form-esqueci-senha').find('[name="senhaNova"], [name="senhaNovaRepetida"]').val('');
         } else {
@@ -67,24 +65,27 @@ var login = (function () {
 
     function login() {
         model = $('#form-busca').serializeObject();
-        if(model['Senha'].length < 6){
+        if (model['Senha'].length < 6) {
             site.toast.error("Sua senha deve pussuir no mínimo 6 dígitos.");
-            $('#form-esqueci-senha').find('[name="Email"], [name="Senha"]').val('');
             return;
-        } 
+        }
 
         $.post("https://localhost:7054/Login", model).done(function () {
-        site.toast.success("Login realizado com sucesso");
-        location.href = ("https://localhost:7054")
-        
-        }).fail(function () {
-            site.toast.error("Falha ao logar");
+            site.toast.success("Login realizado com sucesso");
+            location.href = ("https://localhost:7054")
+        }).fail(function (msg) {
+            
+            $('#form-trocarSenha').find('#trocar-senha-email').val(model['Email']);
+            if (msg.responseText === "Senha Expirada!")
+                site.toast.info(msg)
+            else
+                site.toast.error(msg);
         });
     }
 
     return {
         init: init,
-        verificacaoSenha: verificacaoSenha,
+        verificacaoSenha: verificacaoSenha
     };
 
 })();

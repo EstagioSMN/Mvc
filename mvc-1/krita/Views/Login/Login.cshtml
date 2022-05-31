@@ -19,32 +19,36 @@
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical modal-trocar-senha">
             <form id="form-trocarSenha" class="form-campos">
                 <div class="div-button">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
                 </div>
                 <h2>Trocar Senha</h2>
-                <div class="textfield">
-                    <input class="input-trocar-senha" type="email" required spellcheck="false" name="email">
+                <div class="textfield-trocar-senha">
+                    <input class="input-trocar-senha" type="email" required spellcheck="false" id="trocar-senha-email" name="email">
                     <label class="placeholder-esqueci-senha">
                         E-mail
                     </label>
-    <form id="form-busca" class="form-busca">
-        <main class="main-login">
-            <section class="esquerda-login">
-                <div class="card-login">
+                </div>
+                <div class="textfield-trocar-senha">
+                    <input class="input-trocar-senha" type="password" required spellcheck="false" name="senhaAtual">
+                    <label class="placeholder-esqueci-senha">
+                        Senha Atual
                     </label>
                 </div>
-                <div class="textfield">
+                <div class="textfield-trocar-senha">
                     <input class="input-trocar-senha" type="password" required spellcheck="false" name="novaSenha">
                     <label class="placeholder-esqueci-senha">
                         Senha Nova
                     </label>
                 </div>
-                <div class="textfield">
-                    <input class="input-trocar-senha" type="password" required spellcheck="false" name="repitaSenhaNova">
+                <div class="textfield-trocar-senha">
+                    <input class="input-trocar-senha" type="password" required spellcheck="false"
+                        name="repitaSenhaNova">
                     <label class="placeholder-esqueci-senha">
                         Repita Nova Senha
                     </label>
                 </div>
-                <input class="botao-enviar" type="submit" name="salvar" value="Salvar" onclick="login.verificacaoSenha()">
+                <input class="botao-enviar" type="submit" name="salvar" value="Salvar"
+                    onclick="login.verificacaoSenha()">
             </form>
         </div>
     </div>
